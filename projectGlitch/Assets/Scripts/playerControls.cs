@@ -7,6 +7,7 @@ public class playerControls : MonoBehaviour
 
     //public Rigidbody rigidbody = GetComponent<Rigidbody>;
     public float speed = 5.0f;
+    public float jumpSpeed = 8.0f;
     
 
     // Start is called before the first frame update
@@ -34,6 +35,6 @@ public class playerControls : MonoBehaviour
         //float verticalInput = Input.GetAxis("Vertical");
         float jumpInput = Input.GetAxis("Jump");
 
-        transform.Translate(new Vector2(horizontalInput, jumpInput) * speed * Time.deltaTime);
+        transform.Translate(new Vector2(horizontalInput, jumpInput) * jumpSpeed * Time.deltaTime);
     }
 }
