@@ -5,13 +5,13 @@ using UnityEngine;
 public class glitch : MonoBehaviour
 {
     public GameObject player;
-    PlayerScript playerScript;
+    playerControls playerScript;
 
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
-        playerScript = player.GetComponent<playerControls>;
+        playerScript = player.GetComponent<playerControls>();
     }
 
     // Update is called once per frame
