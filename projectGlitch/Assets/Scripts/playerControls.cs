@@ -35,6 +35,7 @@ public class playerControls : MonoBehaviour
         //float verticalInput = Input.GetAxis("Vertical");
         float jumpInput = Input.GetAxis("Jump");
 
-        transform.Translate(new Vector2(horizontalInput, jumpInput) * jumpSpeed * Time.deltaTime);
+        transform.Translate(new Vector2(horizontalInput, 0) * speed * Time.deltaTime);
+        transform.Translate(new Vector2(0, jumpInput) * jumpSpeed * Time.deltaTime);
     }
 }
