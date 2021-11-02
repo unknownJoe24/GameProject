@@ -2,6 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+//code to change values of variables from other classes: https://answers.unity.com/questions/42843/referencing-non-static-variables-from-another-scri.html
+
+
 public class glitch : MonoBehaviour
 {
     public GameObject player;
