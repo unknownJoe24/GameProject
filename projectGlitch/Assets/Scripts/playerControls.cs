@@ -6,7 +6,8 @@ public class playerControls : MonoBehaviour
 {
 
     //public Rigidbody rigidbody = GetComponent<Rigidbody>;
-    public float speed = 5.0f;
+    public float speed = 10.0f;
+    public float dashSpeed = 20.0f;
     public float jumpSpeed = 8.0f;
     
 
@@ -19,23 +20,22 @@ public class playerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.LeftShift)){
-            speed = 10.0f;
-        }
-
-        if(Input.GetKeyUp(KeyCode.LeftShift)){
-            speed = 5.0f;
-        }
+        
 
         Movement();
     }
 
     public void Movement(){
         float horizontalInput = Input.GetAxis("Horizontal");
-        //float verticalInput = Input.GetAxis("Vertical");
+        float verticalInput = Input.GetAxis("Vertical");
         float jumpInput = Input.GetAxis("Jump");
 
         transform.Translate(new Vector2(horizontalInput, 0) * speed * Time.deltaTime);
         transform.Translate(new Vector2(0, jumpInput) * jumpSpeed * Time.deltaTime);
+
+        if (Input.GetKeyDown(KeyCode.LeftShift))
+        {
+            transform.Translate(new Vector2(horizontalInput, verticalInput) * dashSpeed * Time.deltaTime);
+        }
     }
 }

@@ -25,4 +25,5 @@ public class glitch : MonoBehaviour
             playerScript.jumpSpeed = 300.0f;
         }
     }
+
 }
