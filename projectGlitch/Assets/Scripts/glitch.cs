@@ -24,6 +24,11 @@ public class glitch : MonoBehaviour
         {
             playerScript.jumpSpeed = 50.0f;
         }
+
+        if (Input.GetButton("Fire2"))
+        {
+            playerScript.speed = 50.0f;
+        }
     }
 
 }
