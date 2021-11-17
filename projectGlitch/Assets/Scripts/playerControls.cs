@@ -54,7 +54,7 @@ public class playerControls : MonoBehaviour
             isGrounded = false;
         }
 
-        if (Input.GetKeyDown(KeyCode.LeftShift))
+        if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Fire3"))
         {
             transform.Translate(new Vector2(horizontalInput, verticalInput) * dashSpeed * Time.deltaTime);
         }
