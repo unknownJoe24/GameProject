@@ -27,18 +27,37 @@ public class glitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(!isActive)
+        if (!isActive) //only randomly apply effect if not already in effect
+        { 
             randomTime = Random.Range(randomTimeMin, randomTimeMax);
+            effectTime = 5;
+        }
+
+        if (isActive)
+        {
+            effectTime -= Time.deltaTime;
+        }
+
         if (randomTime < 3 && randomTime > 2)
         {
             isActive = true;
             playerScript.jumpSpeed = 50.0f;
+            if(effectTime <= 0)
+            {
+                playerScript.jumpSpeed = 5.0f;
+                isActive = false;
+            }
         }
 
         if (randomTime < 5 && randomTime > 4)
         {
             isActive = true;
             playerScript.speed = 50.0f;
+            if(effectTime <= 0)
+            {
+                playerScript.speed = 5.0f;
+                isActive = false;
+            }
         }
     }
 
