@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 //code to change values of variables from other classes: https://answers.unity.com/questions/42843/referencing-non-static-variables-from-another-scri.html
-
+//random time code from https://forum.unity.com/threads/how-to-spawn-at-random-times.1041733/
 
 public class glitch : MonoBehaviour
 {
