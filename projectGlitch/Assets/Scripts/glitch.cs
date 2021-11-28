@@ -10,6 +10,13 @@ public class glitch : MonoBehaviour
     public GameObject player;
     playerControls playerScript;
 
+    public float randomTimeMax = 50; //max time for random effect to occur
+    public float randomTimeMin = 0; //min time for random effect to occur
+    public float randomTime;
+    public float effectTime = 5;
+
+    private bool isActive = false;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,13 +27,17 @@ public class glitch : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButton("Fire1"))
+        if(!isActive)
+            randomTime = Random.Range(randomTimeMin, randomTimeMax);
+        if (randomTime < 3 && randomTime > 2)
         {
+            isActive = true;
             playerScript.jumpSpeed = 50.0f;
         }
 
-        if (Input.GetButton("Fire2"))
+        if (randomTime < 5 && randomTime > 4)
         {
+            isActive = true;
             playerScript.speed = 50.0f;
         }
     }
