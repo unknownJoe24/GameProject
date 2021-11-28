@@ -15,7 +15,7 @@ public class glitch : MonoBehaviour
     public float randomTime;
     public float effectTime = 5;
 
-    private bool isActive = false;
+    private bool isActive = true;
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +36,8 @@ public class glitch : MonoBehaviour
         if (isActive)
         {
             effectTime -= Time.deltaTime;
+            if (effectTime <= 0)
+                isActive = false;
         }
 
         if (randomTime < 3 && randomTime > 2)

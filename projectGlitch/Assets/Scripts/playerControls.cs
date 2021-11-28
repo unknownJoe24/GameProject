@@ -4,6 +4,7 @@ using UnityEngine;
 
 
 //jump code from https://answers.unity.com/questions/1020197/can-someone-help-me-make-a-simple-jump-script.html
+//death and respawn code from https://answers.unity.com/questions/634219/how-do-i-respawn-the-player-after-it-dies.html
 
 public class playerControls : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class playerControls : MonoBehaviour
     public float dashSpeed = 50.0f;
     public float jumpSpeed = 5.0f;
     public Vector2 jump;
+    int deaths;
+    Vector3 startPosition = new Vector3(0, (float)5.629, 0);
 
     bool isGrounded;
     
@@ -27,8 +30,6 @@ public class playerControls : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-
         Movement();
     }
 
@@ -58,5 +59,25 @@ public class playerControls : MonoBehaviour
         {
             transform.Translate(new Vector2(horizontalInput, verticalInput) * dashSpeed * Time.deltaTime);
         }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Death")
+        {
+            //murder
+            deaths++;
+            StartCoroutine(Death());
+        }
+    }
+
+    IEnumerator Death()
+    {
+        Debug.Log("dead");
+        GetComponent<Renderer>().enabled = false;
+        yield return new WaitForSeconds(5);
+        Debug.Log("respawn");
+        transform.position = startPosition;
+        GetComponent<Renderer>().enabled = true;
     }
 }
