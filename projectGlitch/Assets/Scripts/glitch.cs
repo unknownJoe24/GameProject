@@ -43,7 +43,7 @@ public class glitch : MonoBehaviour
         if (randomTime < 3 && randomTime > 2)
         {
             isActive = true;
-            playerScript.jumpSpeed = 50.0f;
+            playerScript.jumpSpeed = 15.0f;
             if(effectTime <= 0)
             {
                 playerScript.jumpSpeed = 5.0f;
