@@ -10,8 +10,8 @@ public class glitch : MonoBehaviour
     public GameObject player;
     playerControls playerScript;
 
-    public float randomTimeMax = 50; //max time for random effect to occur
-    public float randomTimeMin = 0; //min time for random effect to occur
+    public int randomTimeMax = 100; //max time for random effect to occur
+    public int randomTimeMin = 1; //min time for random effect to occur
     public float randomTime;
     public float effectTime = 5;
 
@@ -40,7 +40,8 @@ public class glitch : MonoBehaviour
                 isActive = false;
         }
 
-        if (randomTime < 3 && randomTime > 2)
+        //moonjump glitch
+        if (randomTime < 25 && randomTime > 1)
         {
             isActive = true;
             playerScript.jumpSpeed = 15.0f;
@@ -50,8 +51,9 @@ public class glitch : MonoBehaviour
                 isActive = false;
             }
         }
-
-        if (randomTime < 5 && randomTime > 4)
+        
+        //speed up glitch
+        if (randomTime < 75 && randomTime > 50)
         {
             isActive = true;
             playerScript.speed = 50.0f;
@@ -60,6 +62,13 @@ public class glitch : MonoBehaviour
                 playerScript.speed = 5.0f;
                 isActive = false;
             }
+        }
+
+        //teleportation glitch
+        if(randomTime == 100)
+        {
+            //teleport player
+            transform.position = new Vector3(Random.Range(0, 100), Random.Range(0, 100), 0);
         }
     }
 

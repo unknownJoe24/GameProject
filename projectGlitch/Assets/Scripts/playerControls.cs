@@ -48,7 +48,7 @@ public class playerControls : MonoBehaviour
         float verticalInput = Input.GetAxis("Vertical");
         float jumpInput = Input.GetAxis("Jump");
 
-        transform.Translate(new Vector2(horizontalInput, 0) * speed * Time.deltaTime);
+        transform.position = transform.position + new Vector3(horizontalInput * speed * Time.deltaTime, 0, 0);
         if (Input.GetButtonDown("Jump") && isGrounded == true)
         {
             rb.AddForce(jump * jumpSpeed, ForceMode.Impulse);
@@ -57,7 +57,7 @@ public class playerControls : MonoBehaviour
 
         if (Input.GetKeyDown(KeyCode.LeftShift) || Input.GetButtonDown("Fire3"))
         {
-            transform.Translate(new Vector2(horizontalInput, verticalInput) * dashSpeed * Time.deltaTime);
+            transform.position = transform.position + new Vector3(horizontalInput * dashSpeed * Time.deltaTime, verticalInput * dashSpeed * Time.deltaTime, 0);
         }
     }
 
