@@ -6,7 +6,7 @@ using UnityEngine.AI;
 public class enemyMovement : MonoBehaviour
 {
 
-    Transform player; //get player object to track
+    public Transform player; //get player object to track
     NavMeshAgent nav;
 
     // Start is called before the first frame update

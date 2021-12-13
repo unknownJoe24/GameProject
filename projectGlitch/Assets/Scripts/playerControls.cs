@@ -63,9 +63,9 @@ public class playerControls : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Death")
+        if(other.tag == "Death" || other.tag == "Enemy")
         {
-            //murder
+            //kill player
             deaths++;
             StartCoroutine(Death());
         }
