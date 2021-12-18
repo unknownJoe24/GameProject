@@ -68,7 +68,8 @@ public class glitch : MonoBehaviour
         if(randomTime == 100)
         {
             //teleport player
-            transform.position = new Vector3(Random.Range(0, 100), Random.Range(0, 100), 0);
+            transform.position = new Vector3(Random.Range(0, 140), Random.Range(0, 150), 0);
+            effectTime = 0;
         }
     }
 

@@ -15,7 +15,7 @@ public class playerControls : MonoBehaviour
     public float jumpSpeed = 5.0f;
     public Vector2 jump;
     int deaths;
-    Vector3 startPosition = new Vector3(0, (float)5.629, 0);
+    GameObject startPosition;
 
     bool isGrounded;
     
@@ -25,6 +25,7 @@ public class playerControls : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         jump = new Vector2(0.0f, 2.0f);
+        startPosition = GameObject.FindGameObjectWithTag("Start Position");
     }
 
     // Update is called once per frame
@@ -77,7 +78,7 @@ public class playerControls : MonoBehaviour
         GetComponent<Renderer>().enabled = false;
         yield return new WaitForSeconds(5);
         Debug.Log("respawn");
-        transform.position = startPosition;
+        transform.position = startPosition.transform.position;
         GetComponent<Renderer>().enabled = true;
     }
 }
