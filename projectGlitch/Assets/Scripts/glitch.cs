@@ -41,7 +41,7 @@ public class glitch : MonoBehaviour
         }
 
         //moonjump glitch
-        if (randomTime < 25 && randomTime > 1)
+        if (randomTime < 20 && randomTime > 1)
         {
             isActive = true;
             playerScript.jumpSpeed = 15.0f;
@@ -53,7 +53,7 @@ public class glitch : MonoBehaviour
         }
         
         //speed up glitch
-        if (randomTime < 75 && randomTime > 50)
+        if (randomTime < 70 && randomTime > 50)
         {
             isActive = true;
             playerScript.speed = 50.0f;
