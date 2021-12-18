@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
+using UnityEngine.SceneManagement;
 
 
 //jump code from https://answers.unity.com/questions/1020197/can-someone-help-me-make-a-simple-jump-script.html
@@ -16,6 +18,8 @@ public class playerControls : MonoBehaviour
     public Vector2 jump;
     int deaths;
     GameObject startPosition;
+    GameObject enemy;
+    NavMeshAgent enemyNav;
 
     bool isGrounded;
     
@@ -26,6 +30,8 @@ public class playerControls : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         jump = new Vector2(0.0f, 2.0f);
         startPosition = GameObject.FindGameObjectWithTag("Start Position");
+        enemy = GameObject.FindGameObjectWithTag("Enemy");
+        enemyNav = enemy.GetComponent<NavMeshAgent>();
     }
 
     // Update is called once per frame
@@ -69,6 +75,19 @@ public class playerControls : MonoBehaviour
             //kill player
             deaths++;
             StartCoroutine(Death());
+        }
+
+        if(other.tag == "Spawn Enemy")
+        {
+            //set enemy to active
+            enemy.SetActive(true);
+            enemyNav.Warp(startPosition.transform.position);
+        }
+
+        if (other.tag == "End")
+        {
+            //set enemy to inactive
+            enemy.SetActive(false);
         }
     }
 

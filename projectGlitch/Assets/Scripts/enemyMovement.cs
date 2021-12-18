@@ -9,6 +9,7 @@ public class enemyMovement : MonoBehaviour
     public Transform player; //get player object to track
     NavMeshAgent nav;
 
+
     // Start is called before the first frame update
     void Start()
     {
