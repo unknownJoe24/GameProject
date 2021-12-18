@@ -9,16 +9,15 @@ public class mainMenu : MonoBehaviour
     public Button startGame;
     public Button options;
     public Button endGame;
+    public TMP_Text startGameText;
+    public TMP_Text optionsText;
+    public TMP_Text endGameText;
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        startGameText.text = "Start Game";
+        optionsText.text = "Options";
+        endGameText.text = "Quit Game";
     }
 }
