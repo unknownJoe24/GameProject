@@ -20,6 +20,7 @@ public class playerControls : MonoBehaviour
     GameObject startPosition;
     GameObject enemy;
     NavMeshAgent enemyNav;
+    public int next;
 
     bool isGrounded;
     

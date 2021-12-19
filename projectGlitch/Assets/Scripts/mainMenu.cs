@@ -17,7 +17,7 @@ public class mainMenu : MonoBehaviour
     void Start()
     {
         startGameText.text = "Start Game";
-        optionsText.text = "Options";
+        optionsText.text = "Credits";
         endGameText.text = "Quit Game";
     }
 }

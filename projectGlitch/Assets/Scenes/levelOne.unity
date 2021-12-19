@@ -500,6 +500,7 @@ GameObject:
   - component: {fileID: 352235719}
   - component: {fileID: 352235718}
   - component: {fileID: 352235717}
+  - component: {fileID: 352235720}
   m_Layer: 0
   m_Name: Level End
   m_TagString: End
@@ -542,6 +543,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &352235720
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 352235716}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c85b958ec8fc7c4380ad8c73dcc11bf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  scene: 3
 --- !u!1 &402860731 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6558894882450947926, guid: fda69314d33d79945ad158ec6799a5a1,
